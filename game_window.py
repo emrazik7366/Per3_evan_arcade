@@ -1,8 +1,8 @@
 
 import arcade
 
-SCREEN_WIDTH = 640
-SCREEN_HEIGHT = 480
+SCREEN_WIDTH = int(input("width "))
+SCREEN_HEIGHT = int(input("height "))
 
 
 class MyGame(arcade.Window):
