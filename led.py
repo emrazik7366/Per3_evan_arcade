@@ -3,8 +3,14 @@ from time import sleep
 
 light = LED(17)
 
-while True:
-    light.on()
-    sleep(1)
-    light.off()
-    sleep(1)
+on = int(input("time on "))
+off = int(input("time off "))
+
+def blinker(on, off):
+    while True:
+        light.on()
+        sleep(on)
+        light.off()
+        sleep(off)
+
+blinker(on, off)
