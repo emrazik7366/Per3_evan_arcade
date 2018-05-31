@@ -5,6 +5,8 @@ def buttonn():
     sensor = Button(2)
     while 1 == 1:
         sensor.wait_for_press()
+        if self.physics_engine.can_jump():
+                self.player_sprite.change_y = JUMP_SPEED
         sleep(.5)
 def ledd():
     led = LED(17)
