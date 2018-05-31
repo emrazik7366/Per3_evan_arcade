@@ -5,8 +5,6 @@ def buttonn():
     sensor = Button(2)
     while 1 == 1:
         sensor.wait_for_press()
-        #jump
-        print('jumped')
         sleep(.5)
 def ledd():
     led = LED(17)
@@ -14,3 +12,7 @@ def ledd():
     while 1 == 1:
         if self.game_over == True:
             led.on()
+
+if __name__ == '__main__':
+    while True:
+        print('main')
