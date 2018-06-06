@@ -15,6 +15,7 @@ import game_button_and_led
 
 
 
+
 SPRITE_SCALING = 0.5
 
 SCREEN_WIDTH = 800
@@ -222,14 +223,15 @@ class MyGame(arcade.Window):
         
 
     
-    def buttonn(self, key, modifiers):
+    def on_key_press(self, key, modifiers):
         """
         Called whenever the key is pressed.
         """
+
         
-#        if key == arcade.key.UP:
-  #          if self.physics_engine.can_jump():
-   #             self.player_sprite.change_y = JUMP_SPEED
+        if key == arcade.key.UP:
+            if self.physics_engine.can_jump():
+                self.player_sprite.change_y = JUMP_SPEED
 
     def on_key_release(self, key, modifiers):
         """
@@ -242,9 +244,15 @@ class MyGame(arcade.Window):
         """ Movement and game logic """
 
 
+        if game_button_and_led.button_is_pressed():
+            # make it jump
+            if self.physics_engine.can_jump():
+                self.player_sprite.change_y = JUMP_SPEED
+
         
         if self.player_sprite.right >= self.end_of_map:
             self.game_over = True
+            
 
             
 
@@ -299,6 +307,7 @@ class MyGame(arcade.Window):
 
         if self.game_over:
             arcade.draw_text("Game Over", 400, 300, arcade.color.WHITE, 20)
+            game_button_and_led.ledd()
 
 
 

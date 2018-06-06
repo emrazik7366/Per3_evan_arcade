@@ -1,19 +1,18 @@
 from gpiozero import Button
+from gpiozero import LED
 from time import sleep
-from Per3_evan_arcade import arcade_final_code
-def buttonn():
+
+def button_is_pressed():
     sensor = Button(2)
-    while 1 == 1:
-        sensor.wait_for_press()
-        if self.physics_engine.can_jump():
-                self.player_sprite.change_y = JUMP_SPEED
-        sleep(.5)
+    return sensor.is_pressed
+        
 def ledd():
     led = LED(17)
     led.off()
     while 1 == 1:
-        if self.game_over == True:
             led.on()
+            sleep(10)
+            led.off()
 
 if __name__ == '__main__':
     while True:
