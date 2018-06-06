@@ -9,10 +9,9 @@ def button_is_pressed():
 def ledd():
     led = LED(17)
     led.off()
-    while 1 == 1:
-            led.on()
-            sleep(10)
-            led.off()
+    led.on()
+    sleep(.1)
+    led.off()
 
 if __name__ == '__main__':
     while True:
