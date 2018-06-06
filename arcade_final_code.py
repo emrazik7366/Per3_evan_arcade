@@ -97,9 +97,8 @@ class MyGame(arcade.Window):
 
         
 
-        # Get a 2D array made of numbers based on the map
+        # Creates a list which generates the map
                 
-        
         map_test = []
         one = []
         two = []
